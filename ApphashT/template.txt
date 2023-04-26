@@ -4,47 +4,13 @@ Greetings.
 The DTP Teams has been detected an Unauthorized Mobile App Against your organization:
 
 Unauthorized App Information:
-App Store: https://apkgk.com
-Download: https://apkgk.com/com.cloudview.novel/download
-Filename: com.cloudview.novel_2.0.1.210_apkgk.com.apk
-Version: 2.0.1.210
+App Store: https://aptoide.com
+Download: https://telegram.en.aptoide.com
+Filename: telegram.apk
+Version: 9.20.6.1
 SO: Android
-MD5: 235d99c738421f21b0cb00bd3fd093f4
-SHA256: 53c3886822da89e1e3c0de9c24e5fe790fc9c5ea2a039e4cdf65893ff7dbce80
-
-
-Sincerely,
-DTP SOC Team.
-----------------------------------------------------------------------------------------------------
-Greetings.
-
-The DTP Teams has been detected an Unauthorized Mobile App Against your organization:
-
-Unauthorized App Information:
-App Store: https://apkgk.com
-Download: https://apkgk.com/com.ytv.player/download
-Filename: com.ytv.player_8.0_apkgk.com.apk
-Version: 8.0
-SO: Android
-MD5: 720da418ede28c25d266a8c28c4d4f1b
-SHA256: 22a85a87da21c0222ba971209f8b8436d2416b0326f145c64c2661f29469ce7f
-
-
-Sincerely,
-DTP SOC Team.
-----------------------------------------------------------------------------------------------------
-Greetings.
-
-The DTP Teams has been detected an Unauthorized Mobile App Against your organization:
-
-Unauthorized App Information:
-App Store: https://apkgk.com
-Download: https://apkgk.com/mobi.android.superqrcode/download
-Filename: mobi.android.superqrcode_23.04.18_apkgk.com.apk
-Version: 23.04.18
-SO: Android
-MD5: 599afc1dd9eb16eca7b03fb517a031a5
-SHA256: d38ae12e2a6fe1e40a17ba9a2a3a1892b000ae7baca3cad7316d6bf5c7286d7d
+MD5: efff09db5ebe99ddaf3ee18ea372abc8
+SHA256: 060d8d6f7c7641d2fe81f20ccb5af7cea9c343422398f7fbbf93ab0590a186aa
 
 
 Sincerely,

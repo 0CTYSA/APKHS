@@ -1,4 +1,5 @@
 import os
+import tldextract
 import hashlib  # pip install hashlib
 from androguard.core.bytecodes.apk import APK  # pip install androguard
 
@@ -51,7 +52,9 @@ DTP SOC Team.
             download_url = input(
                 f"Ingrese la URL de descarga de la aplicación '{apk_basename}': ")
 
-            app_store = "https://" + download_url.split('/')[2]
+            # Extract domain from URL and add "https://" before it
+            app_store = "https://" + \
+                tldextract.extract(download_url).registered_domain
 
             # Replace placeholders with actual values
             template = template.replace("{app_store}", app_store)
