@@ -70,4 +70,13 @@ DTP SOC Team.
 
             file.write(final_template)  # Write the template in the file
 
+            # Ask user if they want to delete APK files
+            delete_apks = input(
+                "¿Desea eliminar los archivos APK de la carpeta 'apk'? (s/n)")
+
+            if delete_apks.lower() == "s":
+                for apk_filename in apk_files:
+                    apk_file_path = os.path.join(apk_folder_path, apk_filename)
+                    os.remove(apk_file_path)
+
     print("Los templates han sido generados exitosamente.")
