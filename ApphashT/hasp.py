@@ -3,7 +3,7 @@ import tldextract
 import hashlib  # pip install hashlib
 from androguard.core.bytecodes.apk import APK  # pip install androguard
 
-apk_folder_path = os.path.join(os.getcwd(), "APKHS", "ApphashT", "apk")
+apk_folder_path = os.path.join(os.path.dirname(__file__), "apk")
 
 apk_files = os.listdir(apk_folder_path)
 
@@ -12,7 +12,7 @@ apk_files = [f for f in apk_files if f.endswith(".apk")]
 if not apk_files:
     print("No se encontraron archivos APK en la carpeta 'apk'.")
 else:
-    with open(os.path.join(os.getcwd(), "APKHS", "ApphashT", "template.txt"), "w") as file:
+    with open(os.path.join(os.path.dirname(__file__), "template.txt"), "w") as file:
         file.truncate()  # Clear the contents of the file template.txt
 
         for apk_filename in apk_files:
