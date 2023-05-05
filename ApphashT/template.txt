@@ -4,13 +4,13 @@ Greetings.
 The DTP Teams has been detected an Unauthorized Mobile App Against your organization:
 
 Unauthorized App Information:
-App Store: https://aptoide.com
-Download: https://telegram.en.aptoide.com
-Filename: telegram.apk
-Version: 9.20.6.1
+App Store: https://apkgk.com
+Download: https://apkgk.com/com.cloudview.novel/download
+Filename: com.cloudview.novel_2.0.1.210_apkgk.com.apk
+Version: 2.0.1.210
 SO: Android
-MD5: efff09db5ebe99ddaf3ee18ea372abc8
-SHA256: 060d8d6f7c7641d2fe81f20ccb5af7cea9c343422398f7fbbf93ab0590a186aa
+MD5: 235d99c738421f21b0cb00bd3fd093f4
+SHA256: 53c3886822da89e1e3c0de9c24e5fe790fc9c5ea2a039e4cdf65893ff7dbce80
 
 
 Sincerely,
