@@ -70,9 +70,9 @@ DTP SOC Team.
 
             file.write(final_template)  # Write the template in the file
 
-            # Ask user if they want to delete APK files
+            # Ask user if they want to delete the APK and XAPK files
             delete_apks = input(
-                "¿Desea eliminar los archivos APK de la carpeta 'apk'? (s/n)")
+                "¿Desea eliminar los archivos APK y XAPK  de la carpeta 'apk'? (s/n)")
             while delete_apks.lower() not in ["s", "n"]:
                 delete_apks = input(
                     "Por favor, ingrese 's' para sí o 'n' para no: ")
@@ -81,8 +81,8 @@ DTP SOC Team.
                 for apk_filename in apk_files:
                     apk_file_path = os.path.join(apk_folder_path, apk_filename)
                     os.remove(apk_file_path)
-                    delete_msg = "Los archivos APK han sido eliminados"
+                    delete_msg = "Los archivos APK y XAPK han sido eliminados"
             else:
-                delete_msg = "Los archivos APK no han sido eliminados"
+                delete_msg = "Los archivos APK y XAPK no han sido eliminados"
 
     print(delete_msg, "y los templates han sido generados exitosamente.")
