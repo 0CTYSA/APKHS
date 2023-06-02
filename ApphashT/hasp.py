@@ -75,20 +75,18 @@ DTP SOC Team.
                 file.write(final_template)  # Write the template in the file
 
                 # Ask user if they want to delete the APK and XAPK files
-                delete_apks = input(
-                    "¿Desea eliminar los archivos APK y XAPK  de la carpeta 'apk'? (s/n)")
-                while delete_apks.lower() not in ["s", "n"]:
-                    delete_apks = input(
-                        "Por favor, ingrese 's' para sí o 'n' para no: ")
+    delete_apks = input(
+        "¿Desea eliminar los archivos APK, XAPK y ZIP de la carpeta 'apk'? (s/n): ")
+    while delete_apks.lower() not in ["s", "n"]:
+        delete_apks = input("Por favor, ingrese 's' para sí o 'n' para no: ")
 
-                if delete_apks.lower() == "s":
-                    for apk_filename in apk_files:
-                        apk_file_path = os.path.join(
-                            apk_folder_path, apk_filename)
-                        os.remove(apk_file_path)
-                        delete_msg = "Los archivos APK y XAPK han sido eliminados"
-                else:
-                    delete_msg = "Los archivos APK y XAPK no han sido eliminados"
+    if delete_apks.lower() == "s":
+        for apk_filename in apk_files:
+            apk_file_path = os.path.join(apk_folder_path, apk_filename)
+            os.remove(apk_file_path)
+        delete_msg = "Los archivos APK, XAPK y ZIP han sido eliminados"
+    else:
+        delete_msg = "Los archivos APK, XAPK y ZIP no han sido eliminados"
 
         print(delete_msg, "y los templates han sido generados exitosamente.")
 
@@ -137,6 +135,42 @@ def extract_apks_from_xapk():
                 ruta_apks_extraidos, nombre_archivo_sin_carpeta)
             shutil.move(ruta_apk_original, ruta_apk_destino)
             os.rmdir(ruta_apks_extraidos_xapk)
+
+
+def extract_apks_from_archive(folder_path, archive_extension):
+    for filename in os.listdir(folder_path):
+        file_path = os.path.abspath(os.path.join(folder_path, filename))
+        if filename.endswith(archive_extension):
+            archive = None
+            try:
+                archive = zipfile.ZipFile(file_path)
+                extracted_apk_path = None
+
+                for entry in archive.namelist():
+                    if entry.endswith(".apk") and "config." not in entry:
+                        apk_file = archive.open(entry)
+                        extracted_apk_path = os.path.join(
+                            folder_path, os.path.split(entry)[-1])
+                        with open(extracted_apk_path, "wb") as f:
+                            f.write(apk_file.read())
+                        apk_file.close()
+
+                if extracted_apk_path is not None:
+                    apk_destination = os.path.join(
+                        folder_path, os.path.split(extracted_apk_path)[-1])
+                    shutil.move(extracted_apk_path, apk_destination)
+
+            finally:
+                if archive:
+                    archive.close()
+
+
+def extract_apks_from_xapk():
+    xapk_folder_path = "APKHS/ApphashT/apk"
+    extract_apks_from_archive(xapk_folder_path, ".xapk")
+
+    zip_folder_path = "APKHS/ApphashT/apk"
+    extract_apks_from_archive(zip_folder_path, ".zip")
 
 
 extract_apks_from_xapk()
